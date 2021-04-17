@@ -7,17 +7,20 @@ public:
         return helper(nums, 0, (int)nums.size() - 1);
     }
     int helper(vector<int>& nums, int left, int right) {
-        if (left >= right) return nums[left];
+        if (left >= right) 
+            return nums[left];
         int mid = left + (right - left) / 2;
         int lmax = helper(nums, left, mid - 1);
         int rmax = helper(nums, mid + 1, right);
         int mmax = nums[mid], t = mmax;
-        for (int i = mid - 1; i >= left; --i) {
+        for (int i = mid - 1; i >= left; --i) 
+        {
             t += nums[i];
             mmax = max(mmax, t);
         }
         t = mmax;
-        for (int i = mid + 1; i <= right; ++i) {
+        for (int i = mid + 1; i <= right; ++i) 
+        {
             t += nums[i];
             mmax = max(mmax, t);
         }
