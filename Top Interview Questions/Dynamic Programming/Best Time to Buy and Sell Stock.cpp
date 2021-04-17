@@ -3,11 +3,10 @@
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        int res = 0, buy = Integer.MAX_VALUE;
-        for (int price : prices) 
-        {
-            buy = Math.min(buy, price);
-            res = Math.max(res, price - buy);
+        int res = 0, buy = INT_MAX;
+        for (int price : prices) {
+            buy = min(buy, price);
+            res = max(res, price - buy);
         }
         return res;
     }
